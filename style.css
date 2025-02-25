@@ -1,0 +1,88 @@
+/* Background Video */
+video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Main Container */
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 800px;
+    background: rgba(6, 88, 240, 0.8);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    color: white;
+}
+
+/* Content Wrapper (Side by Side Layout) */
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Input Section (Left) */
+.input-section {
+    flex: 1;
+    text-align: center;
+}
+
+/* Weather Result Section (Right) */
+.weather-section {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+/* Input Field */
+input {
+    width: 90%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+/* Button */
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background: #0bc3f1;
+    color: white;
+    border: none;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/* Weather Result */
+.weather-section p {
+    font-size: 16px;
+}
+
+/* Responsive for Small Screens */
+@media (max-width: 600px) {
+    .content {
+        flex-direction: column;
+    }
+}
