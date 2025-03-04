@@ -15,13 +15,13 @@ function getWeather() {
     weatherResult.innerHTML = "";
     forecastContainer.innerHTML = "";
 
-    // Weather API (Current)
+
     const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
-    // Forecast API (5 Days)
+ 
     const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
 
-    // Fetch Weather Data
+    
     fetch(weatherUrl)
         .then(response => response.json())
         .then(data => {
@@ -40,7 +40,7 @@ function getWeather() {
             const sunrise = new Date(data.sys.sunrise * 1000).toLocaleTimeString();
             const sunset = new Date(data.sys.sunset * 1000).toLocaleTimeString();
 
-            // Display Main Weather Info
+         
             weatherResult.innerHTML = `
                 <h2>${data.name}, ${data.sys.country}</h2>
                 <img class="weather-icon" src="${icon}" alt="Weather Icon">
@@ -56,7 +56,7 @@ function getWeather() {
             weatherResult.innerHTML = "<p style='color: red;'>Error fetching weather data.</p>";
         });
 
-    // Fetch 5-Day Forecast Data
+
     fetch(forecastUrl)
         .then(response => response.json())
         .then(data => {
@@ -70,7 +70,7 @@ function getWeather() {
                 }
             });
 
-            // Limit forecast to 5 days
+          
             const forecastEntries = Object.values(dailyForecasts).slice(0, 5);
 
             forecastEntries.forEach(entry => {
@@ -97,7 +97,7 @@ function getWeather() {
         });
 }
 
-// Enter Key Support
+
 document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("cityInput").addEventListener("keydown", function(event) {
         if (event.key === "Enter") {
