@@ -4,7 +4,6 @@ function getWeather() {
     const city = document.getElementById("cityInput").value;
     const weatherResult = document.getElementById("weatherResult");
     const loading = document.getElementById("loading");
-    
 
     if (!city) {
         weatherResult.innerHTML = "<p style='color: red;'>Please enter a city name.</p>";
@@ -34,11 +33,6 @@ function getWeather() {
             const windSpeed = data.wind.speed;
             const sunrise = new Date(data.sys.sunrise * 1000);
             const sunset = new Date(data.sys.sunset * 1000);
-            const currentTime = new Date();
-
-            const isNight = currentTime < sunrise || currentTime > sunset;
-
-           
 
             weatherResult.innerHTML = `
                 <h2>${data.name}, ${data.sys.country}</h2>
@@ -57,6 +51,7 @@ function getWeather() {
         });
 }
 
+// Enter Key Support
 document.addEventListener("DOMContentLoaded", function() {
     const cityInput = document.getElementById("cityInput");
     cityInput.addEventListener("keydown", function(event) {
