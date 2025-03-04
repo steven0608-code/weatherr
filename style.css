@@ -1,3 +1,15 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #007bff, #ffcc80); /* Blue on Top, Light Orange on Bottom */
+    height: 100vh;
+    display: flex;
+    align-items: flex-start; /* Move Up */
+    justify-content: center;
+    text-align: center;
+    margin: 0;
+    padding-top: 10vh; /* Adjust position UP */
+}
+
 /* Main Container */
 .container {
     position: absolute;
