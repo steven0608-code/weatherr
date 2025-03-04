@@ -38,7 +38,7 @@ function getWeather() {
 
             const isNight = currentTime < sunrise || currentTime > sunset;
 
-            backgroundVideo.load();
+           
 
             weatherResult.innerHTML = `
                 <h2>${data.name}, ${data.sys.country}</h2>
