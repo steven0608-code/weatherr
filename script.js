@@ -4,8 +4,7 @@ function getWeather() {
     const city = document.getElementById("cityInput").value;
     const weatherResult = document.getElementById("weatherResult");
     const loading = document.getElementById("loading");
-    const videoSource = document.getElementById("videoSource");
-    const backgroundVideo = document.getElementById("backgroundVideo");
+    
 
     if (!city) {
         weatherResult.innerHTML = "<p style='color: red;'>Please enter a city name.</p>";
@@ -38,16 +37,6 @@ function getWeather() {
             const currentTime = new Date();
 
             const isNight = currentTime < sunrise || currentTime > sunset;
-
-            if (isNight) {
-                videoSource.src = "night.mp4";
-            } else if (weather.includes("rain")) {
-                videoSource.src = "raining.mp4";
-            } else if (weather.includes("thunderstorm")) {
-                videoSource.src = "thunder.mp4";
-            } else {
-                videoSource.src = "sunny.mp4";
-            }
 
             backgroundVideo.load();
 
